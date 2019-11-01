@@ -22,7 +22,7 @@ git checkout -b <own-branch>
 Development done in own branch, then PR to master for review and merging:
 ```
 git add bla.py
-git commit -m "reasonable commit"
+git commit -m "reasonable comment"
 git push origin <own-branch>
 ```
 
