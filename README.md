@@ -28,4 +28,13 @@ git push origin <own-branch>
 
 
 
-## Examples 
+## Example
+```
+cd rootToNumpy
+python convertRootToNumpy.py
+```
+
+```
+cd ../models
+python example.py
+```
