@@ -7,7 +7,7 @@ Will contains several tools:
 - to write back ROOT ntuples with trained model is evaluated
 
 ## Setup and Installation
-Log in to t3ui04.
+Log in to t3ui02.
 
 Environment to have uproot available:
 ```
@@ -28,4 +28,4 @@ git push origin <own-branch>
 
 
 
-## 
+## Examples 
