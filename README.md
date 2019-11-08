@@ -13,6 +13,17 @@ Environment to have uproot available:
 ```
 source /work/mratti/bootAnaconda_fromMauro.sh
 ```
+To run a jupyter notebook:
+```
+jupyter notebook --port 8883 --no-browser 
+```
+To display the notebook on your lapton browser
+```
+ssh -N -f -L localhost:8883:localhost:8883 t3ui02.psi.ch
+http://localhost:8883/tree
+```
+
+
 
 Installation:
 ```
