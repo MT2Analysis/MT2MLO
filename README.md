@@ -7,12 +7,20 @@ Will contains several tools:
 - to write back ROOT ntuples with trained model is evaluated
 
 ## Setup and Installation
-Log in to t3ui02.
+Log in to t3ui02 -> this enables access to  MT2 ntuples in /scratch
+As soon as you want to submit a job to GPU via slurm, you will need to login into t3ui04 and find a solution to get ntuples accessible
 
-Environment to have uproot available:
+Environment (enables uproot):
 ```
 source /work/mratti/bootAnaconda_fromMauro.sh
 ```
+To activate tensorflow environment on CPU or GPU:
+```
+conda env list
+source activate tensorflow
+source activate tensorflow_gpu
+```
+
 To run a jupyter notebook:
 ```
 jupyter notebook --port 8883 --no-browser 

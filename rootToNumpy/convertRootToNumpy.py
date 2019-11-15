@@ -13,14 +13,14 @@ output is a numpy array per file of format:
 
 import uproot
 import numpy as np
-from branches import inbranches,outbranches
-from files import bkgs,sigs
 import os
 
 if __name__ == "__main__":
 
   debug=True
-  prodLabel='V00'
+  prodLabel='V01'
+  from branches_V01 import inbranches,outbranches
+  from files_V01 import bkgs,sigs
 
   outputdir='./output/skim_{}/'.format(prodLabel)
   os.system('mkdir -p {}'.format(outputdir))
@@ -44,7 +44,10 @@ if __name__ == "__main__":
     for ib in inbranches:
       ars[ib] = events.array(ib)
       print ('  reading ib =',ib)
-      #print ('ars[ib]=', ars[ib])
+      print ('  ars[ib]=', ars[ib])
+      print ('  ars[ib] shape=', ars[ib].shape)
+      #print ('  transpose=', np.transpose(ars[ib]))
+      #print ('  transpose shape=', np.transpose(ars[ib]).shape)
       #np.save('./output/{}.npy'.format(ib), ars[ib], allow_pickle=False)
 
 
@@ -68,9 +71,13 @@ if __name__ == "__main__":
     # define the label array and use it as first array on which the output arrays are stacked
     label = ( (ars['GenSusyMScan1']!=0) & (ars['GenSusyMScan2']!=0)  ) # True for sig, False for bkg
     stacked = label[selection]
+    # make it columnar
+    stacked = stacked.reshape((stacked.shape[0],1))
 
     for ob in outbranches:
-      stacked = np.vstack((stacked, ars[ob][selection]))
+      column = ars[ob][selection].reshape(ars[ob][selection].shape[0],1) 
+      stacked = np.hstack((stacked, column))
+      print('Growing shape of stacked=', stacked.shape)
 
     np.save('{}/{}.npy'.format(outputdir,infileNickname), stacked, allow_pickle=False)
     print('Saved numpy array in {}/{}.npy'.format(outputdir,infileNickname))
