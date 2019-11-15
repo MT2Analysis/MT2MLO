@@ -10,6 +10,12 @@ Will contains several tools:
 Log in to t3ui02 -> this enables access to  MT2 ntuples in /scratch
 As soon as you want to submit a job to GPU via slurm, you will need to login into t3ui04 and find a solution to get ntuples accessible
 
+Environment (uproot, keras, numpy)
+```
+conda activate tensorflow_base
+```
+
+OUTDATED:
 Environment (enables uproot):
 ```
 source /work/mratti/bootAnaconda_fromMauro.sh
@@ -20,6 +26,8 @@ conda env list
 source activate tensorflow
 source activate tensorflow_gpu
 ```
+END OUTDATED
+
 
 To run a jupyter notebook:
 ```
@@ -55,5 +63,10 @@ python convertRootToNumpy.py
 
 ```
 cd ../models
-python example.py
+python example_V01.py
+```
+
+```
+cd rootToNumpy
+python evaluateAndAttach.py
 ```

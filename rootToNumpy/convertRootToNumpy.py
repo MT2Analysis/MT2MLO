@@ -60,6 +60,9 @@ if __name__ == "__main__":
                      & (ars['nMuons10']==0) & (ars['nElectrons10']==0) \
                      & (ars['nPFLep5LowMT']==0) & (ars['nPFHad10LowMT']==0)
                   )
+
+    print('WARNING setting selection to zero')
+
     if debug:
       print('  selection array=' , selection)
       print('  shape ht=',        ars['ht'].shape) 
