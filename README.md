@@ -12,6 +12,7 @@ As soon as you want to submit a job to GPU via slurm, you will need to login int
 
 Environment (uproot, keras, numpy)
 ```
+export PATH=/t3home/mratti/miniconda3/bin:$PATH
 conda activate tensorflow_base
 ```
 
