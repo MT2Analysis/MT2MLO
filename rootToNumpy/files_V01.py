@@ -1,6 +1,6 @@
 
 path='/scratch/mratti/NEWSnTtrees/2016/'
-path_signal='/scratch/mratti/NEWSnTtrees/2016/signal/'
+path_signal='/scratch/mratti/NEWSnTtrees/2016/'
 
 bkgs=[
 #[path+'wjets_ht100to200.root','wjets_ht100to200'],
