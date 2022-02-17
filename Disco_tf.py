@@ -1,3 +1,5 @@
+### Please cite: https://arxiv.org/pdf/2001.05310.pdf
+
 import tensorflow as tf
 
 def distance_corr(var_1, var_2, normedweight, power=1):
